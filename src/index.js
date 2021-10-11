@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
+import Summery from "./components/Pages/Summary";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import reportWebVitals from "./reportWebVitals";
@@ -13,8 +14,8 @@ ReactDOM.render(
         <Route exact path="/">
           <App />
         </Route>
-        <Route exact path="/summary">
-          
+        <Route exact path="/summary/:id">
+          <Summery></Summery>
         </Route>
       </Switch>
     </Router>

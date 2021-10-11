@@ -3,9 +3,11 @@ import Button from "../../Button";
 import Card from "../../Card";
 import Page from "../Page";
 
+import { useHistory } from "react-router";
+
 const Home = () => {
   const [results, setResults] = useState([]);
-
+  const history = useHistory();
   const fetchShow = async () => {
     const resp = await fetch("https://api.tvmaze.com/search/shows?q=all");
     const results = await resp.json();
@@ -15,8 +17,8 @@ const Home = () => {
     setResults(results);
   };
 
-  const handleSummary = () => {
-    console.log("clicked");
+  const handleSummary = (id) => {
+    history.push(`/summary/${id}`);
   };
 
   useEffect(() => {
@@ -25,7 +27,7 @@ const Home = () => {
 
   return (
     <Page>
-      {results.map(({ show: { id, name, image, premiered, status } }) => {
+      {results.map(({ show: { id, name, image, premiered, status, summary } }) => {
         return (
           <Card key={id}>
             <div className="flex items-center justify-center">
@@ -43,7 +45,7 @@ const Home = () => {
               </div>
             </div>
 
-            <Button onClick={handleSummary}>Summary</Button>
+            <Button onClick={() => handleSummary(id)}>Summary</Button>
           </Card>
         );
       })}
