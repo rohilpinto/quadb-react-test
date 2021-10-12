@@ -4,7 +4,9 @@ import { useParams, useHistory } from "react-router";
 import Card from "../../Card";
 import Button from "../../Button";
 import Form from "../Form";
+
 const Summary = () => {
+  
   const [results, setResults] = useState([]);
   const history = useHistory();
   const params = useParams();
@@ -29,7 +31,7 @@ const Summary = () => {
 
   return (
     <>
-      <div className="min-h-screen p-20 bg-gray-800 flex flex-col justify-start items-center">
+      <div className="min-h-screen p-20 bg-gray-800 flex flex-col justify-start items-center ">
         <div className="w-full m-1  flex  sm:justify-center ">
           <Button onClick={() => history.push("/")}>Home</Button>
         </div>
