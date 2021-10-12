@@ -41,8 +41,8 @@ const Form = (props) => {
   });
 
   return (
-    <div className="fixed top-0 left-0 text-gray-100     w-full p-2 h-screen bg-transparent backdrop-blur-md flex justify-center items-center">
-      <div className="absolute z-500 w-5/12 h-4/6 bg-gray-900  m-auto rounded flex justify-center">
+    <div className="fixed top-0 left-0 text-gray-100  w-full p-2 h-screen bg-transparent backdrop-blur-md flex justify-center items-center">
+      <div className="absolute z-500 sm:w-auto md:w-5/12 h-4/6 bg-gray-900  m-auto rounded flex justify-center">
         <form onSubmit={formik.handleSubmit} className="flex flex-col items-center justify-center">
           <div className="flex flex-col m-2">
             <label htmlFor="movieName" className=" w-64  text-left	font-bold  ">
