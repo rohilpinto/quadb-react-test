@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import Summary from "./components/Pages/Summary";
-import Form from "./components/Pages/Form";
+
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import reportWebVitals from "./reportWebVitals";
