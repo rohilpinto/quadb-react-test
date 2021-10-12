@@ -5,11 +5,13 @@ import Page from "../Page";
 
 import { useHistory } from "react-router";
 
+const API_URL = "https://api.tvmaze.com/search/shows?q=all";
+
 const Home = () => {
   const [results, setResults] = useState([]);
   const history = useHistory();
   const fetchShow = async () => {
-    const resp = await fetch("https://api.tvmaze.com/search/shows?q=all");
+    const resp = await fetch(API_URL);
     const results = await resp.json();
 
     setResults(results);
@@ -25,9 +27,9 @@ const Home = () => {
 
   return (
     <Page>
-      {results.map(({ show: { id, name, image, premiered, status, summary } }) => {
+      {results.map(({ show: { id, name, image, premiered, status } }) => {
         return (
-          <Card key={id}>
+          <Card key={id} cardType="grid-card">
             <div className="flex items-center justify-center">
               <div>
                 <div className="">

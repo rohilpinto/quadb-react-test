@@ -1,8 +1,15 @@
 import React from "react";
+import classNames from "classnames";
 
 const Card = ({ children, ...props }) => {
   return (
-    <div className="w-80   bg-gray-500 text-white text-center p-3 rounded transition-all duration-150  hover:bg-gray-700" {...props}>
+    <div
+      className={classNames({
+        "summary-card": props.cardType === "summary-card",
+        "grid-card": props.cardType === "grid-card",
+      })}
+      {...props}
+    >
       {children}
     </div>
   );

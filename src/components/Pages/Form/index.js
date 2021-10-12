@@ -5,6 +5,7 @@ import Button from "../../Button";
 const Form = (props) => {
   const getMovieName = props.results.map(({ show }) => show.name);
   const [submitted, setSubmitted] = useState(false);
+
   const validate = (values) => {
     const errors = {};
     if (!values.movieName) {
@@ -37,6 +38,7 @@ const Form = (props) => {
     onSubmit: (values) => {
       localStorage.setItem("bookingDetails", JSON.stringify(values));
       setSubmitted(true);
+      props.setOpenFormModal(false);
     },
   });
 
@@ -68,6 +70,12 @@ const Form = (props) => {
 
           <Button type="submit">{submitted ? "Submitted" : "Submit"}</Button>
         </form>
+
+        <div className="inline-block absolute right-5 top-5 hover:bg-gray-400 rounded transition-all duration-150" onClick={() => props.setOpenFormModal(false)}>
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </div>
       </div>
     </div>
   );

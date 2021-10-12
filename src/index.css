@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer components {
+
+	.grid-card {
+		@apply w-80 bg-gray-500 text-white text-center p-3 rounded transition-all duration-150 ;
+	}
+
+	.summary-card {
+		@apply sm:w-full md:w-600 bg-gray-500 text-white text-center p-3 rounded transition-all duration-150 m-auto ;
+	}
+
+ 
+
+}
